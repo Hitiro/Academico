@@ -1,0 +1,26 @@
+﻿@model Academico.Models.Aluno
+@{
+    ViewBag.Title = "NovoAluno";
+}
+
+<h2>NovoAluno</h2>
+
+@using (var form = Html.BeginForm("SalvarNovo", "Aluno"))
+{
+    <div>
+        @Html.DisplayNameFor(aluno => aluno.Nome)
+        @Html.EditorFor(aluno => aluno.Nome)
+    </div>
+    <div>
+        @Html.DisplayNameFor(aluno => aluno.CPF)
+        @Html.EditorFor(aluno => aluno.CPF)
+    </div>
+    <div>
+        @Html.DisplayNameFor(aluno => aluno.Email)
+        @Html.EditorFor(aluno => aluno.Email)
+    </div>
+
+    <div>
+        <input type="submit" value="Salvar" />
+    </div>
+}

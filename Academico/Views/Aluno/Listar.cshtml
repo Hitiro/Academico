@@ -1,0 +1,42 @@
+﻿@model Academico.Models.Aluno[]
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+
+@Html.ActionLink("Novo", "NovoAluno")
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Matricula</th>
+            <th>Nome</th>
+            <th>CPF</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var aluno in Model)
+        {
+            <tr>
+                <td>
+                <a href="~/Aluno/Editar/@aluno.ID">
+                    @aluno.ID
+                </a>
+                </td>
+                <td>@aluno.Nome</td>
+                <td>@aluno.CPF</td>
+            </tr>
+        }
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td></td>
+            <td>Total Listados</td>
+            <td>@Model.Length</td>
+        </tr>
+    </tfoot>
+</table>
